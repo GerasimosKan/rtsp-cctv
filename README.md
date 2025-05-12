@@ -1,6 +1,6 @@
 # 🎥 RTSP CCTV Viewer
 
-A simple multithreaded RTSP CCTV stream viewer built with Python and OpenCV. 📡
+A simple multithreaded RTSP CCTV stream viewer built with Python. 📡
 
 ---
 
