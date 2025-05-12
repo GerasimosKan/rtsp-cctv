@@ -97,9 +97,20 @@ def create_grid(frames, grid_dims, window_size, stream_names=None, stream_objs=N
         resized = cv2.resize(frame, (cell_w, cell_h), interpolation=cv2.INTER_AREA)
 
         # Draw stream name
-        if stream_names:
-            cv2.putText(resized, stream_names[i], (10, 25), cv2.FONT_HERSHEY_SIMPLEX,
-                        0.7, (0, 255, 0), 2)
+        name = stream_objs[i].name
+        if name:
+            text_size, _ = cv2.getTextSize(name, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2)
+            text_w, text_h = text_size
+            x = 10
+            y = cell_h - 10
+            # Draw a semi-transparent background for readability
+            overlay = resized.copy()
+            cv2.rectangle(overlay, (x - 5, y - text_h - 5),
+                          (x + text_w + 5, y + 5), (0, 0, 0), -1)
+            alpha = 0.5
+            cv2.addWeighted(overlay, alpha, resized, 1 - alpha, 0, resized)
+            cv2.putText(resized, name, (x, y),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
         # Draw audio toggle button
         if stream_objs:
