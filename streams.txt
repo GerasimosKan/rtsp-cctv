@@ -1,0 +1,3 @@
+rtsp://<cam_user>:<cam_pass>@<cam_ip>/stream1
+rtsp://<cam_user>:<cam_pass>@<cam_ip2>/stream1
+rtsp://<cam_user>:<cam_pass>@<cam_ip3>/stream1
