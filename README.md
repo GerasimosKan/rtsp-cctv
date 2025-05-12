@@ -46,7 +46,3 @@ A simple multithreaded RTSP CCTV stream viewer built with Python and OpenCV. �
 * NumPy (`numpy`)
 
 All other libs are in the standard library.
-
-## ✉️ Contact
-
-For questions or feedback, email **[gerasimos@kanelatos.gr](mailto:gerasimos@kanelatos.gr)** 😊
